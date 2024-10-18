@@ -13,17 +13,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class CopyConfigCommand extends Command{
-
-  private $temboDir;
-
-  /**
-   * @param $temboDir
-   */
-  public function __construct($temboDir) {
-    parent::__construct();
-    $this->temboDir = $temboDir;
-  }
+class CopyConfigCommand extends AbstractCommand{
 
   protected function configure() {
     $this->setName('copyconfig')
@@ -31,7 +21,7 @@ class CopyConfigCommand extends Command{
       ->addArgument('template',InputArgument::REQUIRED,'What template must by copied');
   }
 
-  protected function execute(InputInterface $input, OutputInterface $output)
+  public function doExecute(InputInterface $input, OutputInterface $output)
   {
     $template = $input->getArgument('template');
     switch ($template) {

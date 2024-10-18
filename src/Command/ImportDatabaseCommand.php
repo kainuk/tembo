@@ -7,7 +7,7 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class ImportDatabaseCommand extends Command {
+class ImportDatabaseCommand extends AbstractCommand {
 
   protected function configure() {
     $this->setName('importdatabase')
@@ -16,9 +16,9 @@ class ImportDatabaseCommand extends Command {
       ->addArgument('file',InputArgument::REQUIRED,'File that contains the database (sql.tar) format');
   }
 
-  protected function execute(InputInterface $input, OutputInterface $output)
+  public function doExecute(InputInterface $input, OutputInterface $output)
   {
-    $output->writeln('This command is not really implemented (however we work on it');
+    $output->writeln('This command is not really implemented (however we work on it)');
     return 1;
   }
 

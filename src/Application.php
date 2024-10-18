@@ -13,7 +13,7 @@ class Application extends SymfonyApplication{
     parent::__construct('Tembo - Common tools for development environments', 'v1.0');
     $this->temboDir = $temboDir;
     $this->add(new \Tembo\Command\CopyConfigCommand($temboDir));
-    $this->add(new \Tembo\Command\ImportDatabaseCommand());
+    $this->add(new \Tembo\Command\ImportDatabaseCommand($temboDir));
   }
 
 }

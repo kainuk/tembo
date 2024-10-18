@@ -1,0 +1,12 @@
+{
+    "require": {
+        "symfony/console": "6.4.12"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tembo\\": "src"
+        },
+        "classmap": ["src"]
+    }
+
+}

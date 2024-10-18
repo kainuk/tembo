@@ -1,6 +1,7 @@
 {
     "require": {
-        "symfony/console": "6.4.12"
+        "symfony/console": "6.4.12",
+        "symfony/dotenv": "^6.4"
     },
     "autoload": {
         "psr-4": {

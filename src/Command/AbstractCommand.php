@@ -18,6 +18,10 @@ abstract class AbstractCommand extends Command {
     $this->temboDir = $temboDir;
   }
 
+  protected function getenv($variable){
+    return $_ENV[$variable];
+  }
+
   abstract function doExecute(InputInterface $input, OutputInterface $output);
 
   public function execute(InputInterface $input, OutputInterface $output)

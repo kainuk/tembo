@@ -12,8 +12,8 @@ class Application extends SymfonyApplication{
    */
   public function __construct($temboDir) {
     parent::__construct('Tembo - Common tools for development environments', 'v1.0');
-    (new Dotenv())->load($temboDir.'/.env');
     $this->temboDir = $temboDir;
+    (new Dotenv())->load($this->temboDir.'/.env');
     $this->add(new \Tembo\Command\CopyConfigCommand($temboDir));
     $this->add(new \Tembo\Command\ImportDatabaseCommand($temboDir));
     $this->add(new \Tembo\Command\SetVolumesCommand($temboDir));

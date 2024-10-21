@@ -16,6 +16,7 @@ class Application extends SymfonyApplication{
     $this->temboDir = $temboDir;
     $this->add(new \Tembo\Command\CopyConfigCommand($temboDir));
     $this->add(new \Tembo\Command\ImportDatabaseCommand($temboDir));
+    $this->add(new \Tembo\Command\SetVolumesCommand($temboDir));
   }
 
 }
